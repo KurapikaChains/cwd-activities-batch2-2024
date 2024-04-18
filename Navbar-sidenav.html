@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Materialized icon to work -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Font Awesome profile-->
     <script src="https://kit.fontawesome.com/07ad21f26a.js" crossorigin="anonymous"></script>
     <!--cdnjs font awesome-->
@@ -16,7 +18,8 @@
 </head>
 <body>
     <div class="navbar-fixed">
-        <nav class="nav-extended light-green darken-2">
+        <!-- remove class=nav-extended -->
+        <nav class="light-green darken-2">
             <div class="container">
                 <div class="nav-wrapper">
                     <a href="https://fontawesome.com/" class="brand-logo" target="_blank">
@@ -31,17 +34,34 @@
                         <li><a href="https://fontawesome.com/kits" target="_blank">Kits</a></li>
                         <li><a href="https://fontawesome.com/icons" target="_blank">Icon</a></li>
                         <li><a href="https://fontawesome.com/plans" target="_blank">Plans</a></li>
+                        <!-- Additional Dropdown icon -->
+                        <li>
+                            <a href="" class="dropdown-trigger" data-target="dropdown1">
+                                <!-- shortcut <i.material-icon{arrow_drop_down}> -->
+                                <i class="material-icons">arrow_drop_down</i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                
+                <!-- Dropdown structure ito magiging laman ng dropdown menu shortcut  ul#dropdown.dropdown-content-->
+                <ul id="dropdown1" class="dropdown-content">
+                    <!-- ito laman ng dropdown shortcut li>a{One} #! sa href para pagclick wala mapuntahan -->
+                    <li>
+                        <a href="#!">One</a>
+                    </li>
+                    <li>
+                        <a href="#!">Two</a>
+                    </li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                    <li>
+                        <a href="#!">Three</a>
+                    </li>
 
-                <div class="nav-content">
-                    <ul class="tabs tabs-transparent">
-                        <li class="tab"><a href="#test1">Test 1</a></li>
-                        <li class="tab"><a href="#test2">Test 2</a></li>
-                        <li class="tab"><a href="#test3">Test 3</a></li>
-                        <li class="tab"><a href="#test4">Test 4</a></li>
-                    </ul>
-                </div>
+                </ul>
+
             </div>
         </nav>
     </div>
@@ -250,8 +270,9 @@
                 inDuration: 1000,
                 outDuration: 1000
             });
-        })
-        
+            //Dropdown init- this script is for dropdown menu to work
+            $('.dropdown-trigger').dropdown();
+        })    
     </script>
 </body>
 </html>
